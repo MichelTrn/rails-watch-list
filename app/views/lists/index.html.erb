@@ -1,0 +1,13 @@
+<h1>Lists#index</h1>
+<p>Find me in app/views/lists/index.html.erb</p>
+
+<h2>All our List</h1>
+<div class="row">
+  <%@lists.each do |list|%>
+  <div class="col-md-4">
+    <div class="card p-3 mt-3">
+      <p><%= link_to list.name, list_path(list)%></p>
+    </div>
+  </div>
+  <% end %>
+</div>

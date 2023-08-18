@@ -1,0 +1,27 @@
+<h1>Detail List</h1>
+<p>Name : <%=@list.name%></p>
+
+<%= link_to 'Add movie', new_list_bookmark_path(@list) %>
+
+<div class="container mt-5">
+  <p><strong>Movies</strong></p>
+    <div class="row">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="col-md-4">
+          <div class="card p-3 mt-3">
+          <%# Dans mes lists je vais itéré sur chacun de mes bookmarks
+          et par la suite je peux afficher le titre des movies au travers de bookmarks
+          car j'ai défini cela comme possible dans l'objet %>
+          <%# Par contre j'ai besoin de initialiser mon instance de bookmark %>
+            <h2><%= bookmark.movie.title %> </h2>
+            <p><%= bookmark.comment%> </p>
+            <p><%= bookmark.movie.overview %> </p>
+            <p><%= bookmark.movie.rating %> </p>
+            <p><%= bookmark.movie.poster_url %> </p>
+            <%= link_to "Delete", bookmark_path(bookmark),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
