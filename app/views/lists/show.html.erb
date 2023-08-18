@@ -1,5 +1,5 @@
 <% if @list.photo.key %>
-  <div class="banner_with_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
+  <div class="banner_with_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key%>')">
     <div class="container text-center">
       <h1><%= @list.name %></h1>
     </div>
